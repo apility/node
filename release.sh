@@ -1,6 +1,6 @@
 set -ex
 
-USERNAME=apility
+USERNAME=$DOCKER_USERNAME
 IMAGE=node
 
 git pull
@@ -17,5 +17,6 @@ git push
 git push --tags
 docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
 
+docker login -u $USERNAME -p $DOCKER_PASSWORD
 docker push $USERNAME/$IMAGE:latest
 docker push $USERNAME/$IMAGE:$version
