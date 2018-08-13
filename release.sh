@@ -12,7 +12,7 @@ echo "version: $version"
 
 ./build.sh
 git add -A
-git commit -m "version $version"
+git commit -m "version $version" -m "[ci skip]"
 git tag -a "$version" -m "version $version"
 git push
 git push --tags
