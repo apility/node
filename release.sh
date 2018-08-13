@@ -4,6 +4,7 @@ USERNAME=$DOCKER_USERNAME
 IMAGE=node
 
 git pull
+git config --global user.name "CircleCI"
 
 docker run --rm -v "$PWD":/app treeder/bump patch
 version=`cat VERSION`
